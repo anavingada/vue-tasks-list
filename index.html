@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasks of the day</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body style="overflow-x: hidden;">
+  <div class="container">
+
+    <div class="mt-4 mb-5">
+      <h1 class="mb-4">Daily Tasks</h1>
+      <p>This is my first Vue app.</p>
+      <p>It allows me to add to a list a set of tasks for the day. Important: you loose the information if you close the window. </p>
+    </div>
+
+    <div id="app">
+      <div class="mb-4">
+        <label for="task">Write task:</label>
+        <input class="d-block mb-2 p-2 col-12" type="text" id="task" v-model="enteredValue"/>
+        <button class="d-block p-2" v-on:click="addTask">Add task to the list</button>
+      </div>
+
+      <div>
+        <h2>List of Tasks</h2>
+        <ul>
+          <li class="mb-2" v-for=" task in tasks ">{{ task }}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
